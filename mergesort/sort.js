@@ -23,6 +23,7 @@ function mergesort(rangeLeft, rangeRight, array) {
         mergesort(rangeLeft + median + 1, rangeRight, array);
         merge(rangeLeft, median, rangeRight, array);
     }
+    return array;
 }
 
 function merge(rangeLeft, median, rangeRight, array)  {
