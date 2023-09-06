@@ -131,3 +131,6 @@ dist
 
 # vscode
 .vscode
+
+# test
+mergesort/test.js

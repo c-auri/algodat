@@ -31,7 +31,7 @@ function merge(rangeLeft, median, rangeRight, array)  {
     let leftIncrementingPosition = rangeLeft;
     let rightIncrementingPosition = median + 1;
     //push lower number onto array
-    while (leftIncrementingPosition <= median && rightIncrementingPosition <= rangeRight) {
+    while ((leftIncrementingPosition <= median) && (rightIncrementingPosition <= rangeRight)) {
         if (array[leftIncrementingPosition] < array[rightIncrementingPosition]) {
             sortedNumbers.push(array[leftIncrementingPosition]);
             leftIncrementingPosition++;
@@ -41,9 +41,10 @@ function merge(rangeLeft, median, rangeRight, array)  {
             rightIncrementingPosition++;
         }
     }
+
     //push the rest onto the array
-    if (leftIncrementingPosition < median) {
-        while (leftIncrementingPosition < median) {
+    if (leftIncrementingPosition <= median) {
+        while (leftIncrementingPosition <= median) {
             sortedNumbers.push(array[leftIncrementingPosition]);
             leftIncrementingPosition++;
         }
@@ -54,7 +55,10 @@ function merge(rangeLeft, median, rangeRight, array)  {
             rightIncrementingPosition++;
         }
     }
-    for (let i = rangeLeft; i++; i <= rangeRight) {
-        array[i] = sortedNumbers[i];
+    console.log(sortedNumbers);
+    console.log(array);
+    for (let i = 0; i++; i <= rangeRight - rangeLeft) {
+        array[rangeLeft] = sortedNumbers[i];
+        rangeLeft++;
     }
 }
