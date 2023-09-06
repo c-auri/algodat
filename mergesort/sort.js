@@ -22,7 +22,7 @@ function mergesort(rangeLeft, rangeRight, array) {
         let median = Math.floor((rangeRight - rangeLeft) / 2);
         mergesort(rangeLeft, rangeLeft + median, array);
         mergesort(rangeLeft + median + 1, rangeRight, array);
-        merge(rangeLeft, median, rangeRight, array);
+        merge(rangeLeft, rangeLeft + median, rangeRight, array);
     }
 }
 
