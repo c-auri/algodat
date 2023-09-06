@@ -20,7 +20,7 @@ export function sort(array) {
 function mergesort(rangeLeft, rangeRight, array) {
     if (rangeLeft < rangeRight) {
         let median = Math.floor((rangeRight - rangeLeft) / 2);
-        mergesort(rangeLeft, rangeLeft + m, array);
+        mergesort(rangeLeft, rangeLeft + median, array);
         mergesort(rangeLeft + median + 1, rangeRight, array);
         merge(rangeLeft, median, rangeRight, array);
     }
@@ -32,7 +32,7 @@ function merge(rangeLeft, median, rangeRight, array)  {
     let rightIncrementingPosition = median;
     //push lower number onto array
     while (leftIncrementingPosition < median && rightIncrementingPosition <= rangeRight) {
-        if (array[rangeleftPositionLeft] < array[rightIncrementingPosition]) {
+        if (array[leftIncrementingPosition] < array[rightIncrementingPosition]) {
             sortedNumbers.push(array[leftIncrementingPosition]);
             leftIncrementingPosition++;
         }
@@ -54,7 +54,7 @@ function merge(rangeLeft, median, rangeRight, array)  {
             rightIncrementingPosition++;
         }
     }
-    for (i = rangeLeft; i++; i <= rangeRight) {
+    for (let i = rangeLeft; i++; i <= rangeRight) {
         array[i] = sortedNumbers[i];
     }
 }
