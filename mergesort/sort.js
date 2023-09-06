@@ -4,8 +4,8 @@
  * @param {number[]} array 
  */
 export function sort(array) {
-    rangeLeft = 0;
-    rangeRight = array.length-1;
+    let rangeLeft = 0;
+    let rangeRight = array.length-1;
     mergesort(rangeLeft, rangeRight, array);
     // TODO:
     // Implement the function using mergesort.
@@ -18,7 +18,7 @@ export function sort(array) {
 
 function mergesort(rangeLeft, rangeRight, array) {
     if (rangeLeft < rangeRight) {
-        median = floor((rangeRight - rangeLeft) / 2);
+        let median = floor((rangeRight - rangeLeft) / 2);
         mergesort(rangeLeft, rangeLeft + m, array);
         mergesort(rangeLeft + median + 1, rangeRight, array);
         merge(rangeLeft, median, rangeRight, array);
@@ -26,9 +26,9 @@ function mergesort(rangeLeft, rangeRight, array) {
 }
 
 function merge(rangeLeft, median, rangeRight, array)  {
-    sortedNumbers = [];
-    leftIncrementingPosition = rangeLeft;
-    rightIncrementingPosition = median;
+    let sortedNumbers = [];
+    let leftIncrementingPosition = rangeLeft;
+    let rightIncrementingPosition = median;
     //push lower number onto array
     while (leftIncrementingPosition < median && rightIncrementingPosition <= rangeRight) {
         if (array[rangeleftPositionLeft] < array[rightIncrementingPosition]) {
