@@ -29,9 +29,9 @@ function mergesort(rangeLeft, rangeRight, array) {
 function merge(rangeLeft, median, rangeRight, array)  {
     let sortedNumbers = [];
     let leftIncrementingPosition = rangeLeft;
-    let rightIncrementingPosition = median;
+    let rightIncrementingPosition = median + 1;
     //push lower number onto array
-    while (leftIncrementingPosition < median && rightIncrementingPosition <= rangeRight) {
+    while (leftIncrementingPosition <= median && rightIncrementingPosition <= rangeRight) {
         if (array[leftIncrementingPosition] < array[rightIncrementingPosition]) {
             sortedNumbers.push(array[leftIncrementingPosition]);
             leftIncrementingPosition++;
