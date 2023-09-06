@@ -7,6 +7,7 @@ export function sort(array) {
     let rangeLeft = 0;
     let rangeRight = array.length-1;
     mergesort(rangeLeft, rangeRight, array);
+    return array;
     // TODO:
     // Implement the function using mergesort.
     // You may use private helper functions in this file.
@@ -18,12 +19,11 @@ export function sort(array) {
 
 function mergesort(rangeLeft, rangeRight, array) {
     if (rangeLeft < rangeRight) {
-        let median = floor((rangeRight - rangeLeft) / 2);
+        let median = Math.floor((rangeRight - rangeLeft) / 2);
         mergesort(rangeLeft, rangeLeft + m, array);
         mergesort(rangeLeft + median + 1, rangeRight, array);
         merge(rangeLeft, median, rangeRight, array);
     }
-    return array;
 }
 
 function merge(rangeLeft, median, rangeRight, array)  {
