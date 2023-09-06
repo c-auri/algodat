@@ -1,0 +1,11 @@
+{
+  "name": "algodat",
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-vm-modules ./node_modules/.bin/jest",
+    "watch": "node --experimental-vm-modules ./node_modules/.bin/jest --watch"
+  },
+  "devDependencies": {
+    "jest": "^29.6.4"
+  }
+}
