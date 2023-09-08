@@ -8,13 +8,6 @@ export function sort(array) {
     let rangeRight = array.length-1;
     mergesort(rangeLeft, rangeRight, array);
     return array;
-    // TODO:
-    // Implement the function using mergesort.
-    // You may use private helper functions in this file.
-    
-    // To not flood the console, most tests are skipped initially.
-    // Remove the ".skip" extension of a test to un-skip it at your own pace.
-    // Your goal is to pass all tests, including the ones currently skipped.
 }
 
 function mergesort(rangeLeft, rangeRight, array) {
@@ -55,9 +48,8 @@ function merge(rangeLeft, median, rangeRight, array)  {
             rightIncrementingPosition++;
         }
     }
-    console.log(sortedNumbers);
-    console.log(array);
-    for (let i = 0; i++; i <= rangeRight - rangeLeft) {
+    let changeRange = rangeRight - rangeLeft; 
+    for (let i = 0; i <= changeRange; i++) {
         array[rangeLeft] = sortedNumbers[i];
         rangeLeft++;
     }
