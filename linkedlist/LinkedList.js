@@ -30,7 +30,7 @@ export class LinkedList {
      * @returns {any | null}
      */
     get head() {
-        return (this.#headNode === null)? null : this.#headNode.value;
+        return (this.#headNode === null) ? null : this.#headNode.value;
     }
 
     /**
@@ -124,16 +124,7 @@ export class LinkedList {
      * @returns {any | null}
      */
     at(index) {
-        if (index === 0) {
-            return (this.#headNode === null)? null : this.#headNode.value;
-        }
-        let i = 0;
-        let temp = this.#headNode;
-        while (temp.nextNode !== null && i < index) {
-            temp = temp.nextNode;
-            i++;
-        }
-        return (i === index) ? temp.value : null;
+        return this.#nodeAt(index).value;
     }
 
     /**
@@ -201,6 +192,12 @@ export class LinkedList {
      * @returns {Node}
      */
     #nodeAt(index) {
-        // You don't need to implement this if you don't need it. But it's probably a good idea.
+        let i = 0;
+        let temp = this.#headNode;
+        while (i<index && temp !== null) {
+            temp = temp.nextNode;
+            i++;
+        }
+        return (i === index) ? temp : null;
     }
 }
