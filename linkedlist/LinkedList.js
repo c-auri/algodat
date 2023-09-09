@@ -143,8 +143,9 @@ export class LinkedList {
         if (index < 0 ) {
             throw("Index can't be negative");
         }
-        return this.#nodeAt(index).value;
-    }
+        let node = this.#nodeAt(index);
+        return (node === null) ? null : node.value; 
+        }
 
     /**
      * Removes the last value in the list.
