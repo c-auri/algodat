@@ -38,7 +38,16 @@ export class LinkedList {
      * @returns {any | null}
      */
     get tail() {
-        // TODO: implement
+        if (this.#headNode === null) {
+            return null;
+        }
+        else {
+            let temp = this.#headNode;
+            while (temp.nextNode !== null) {
+                temp = temp.nextNode;
+            }
+            return temp;
+        }
     }
 
     /**
