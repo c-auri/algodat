@@ -52,13 +52,13 @@ describe('Appending a value', () => {
             list.append(value)
             expect(list.head).toBe(value)
         })
-        test.skip('adds that value to the tail', () => {
+        test('adds that value to the tail', () => {
             const value = 'a new node'
             const list = new LinkedList()
             list.append(value)
             expect(list.tail).toBe(value)
         })
-        test.skip('results in size 1', () => {
+        test('results in size 1', () => {
             const list = new LinkedList()
             list.append('a new node')
             expect(list.size).toBe(1)
