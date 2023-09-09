@@ -119,7 +119,16 @@ export class LinkedList {
      * @returns {any | null}
      */
     at(index) {
-        // TODO: implement
+        if (index === 0) {
+            return (this.#headNode === null)? null : this.#headNode.value;
+        }
+        let i = 0;
+        let temp = this.#headNode;
+        while (temp.nextNode !== null && i < index) {
+            temp = temp.nextNode;
+            i++;
+        }
+        return (i === index) ? temp.value : null;
     }
 
     /**

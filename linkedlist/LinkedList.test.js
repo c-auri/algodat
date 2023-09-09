@@ -17,7 +17,7 @@ describe('A new list constructed', () => {
             const list = new LinkedList('head', 'middle', 'tail')
             expect(list.size).toBe(3)
         })
-        test.skip('contains these values in the correct order', () => {
+        test('contains these values in the correct order', () => {
             const list = new LinkedList('head', 'middle', 'tail')
             expect(list.at(0)).toBe('head')
             expect(list.at(1)).toBe('middle')
