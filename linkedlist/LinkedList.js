@@ -126,7 +126,7 @@ export class LinkedList {
             this.#headNode = other.#headNode;
         }
         else {
-        this.tail.nextNode = other.#headNode;
+        this.#lastNode.nextNode = other.#headNode;
         }
         return this;
     }
