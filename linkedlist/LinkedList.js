@@ -18,10 +18,10 @@ export class LinkedList {
     // Uses rest parameter syntax (...) to allow for an indefinite number of parameters:
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters
     constructor(...values) {
-        this.#headNode = null
+        this.#headNode = null;
 
         for (const value of values) {
-            this.append(value)
+            this.append(value);
         }
     }
 
@@ -122,7 +122,13 @@ export class LinkedList {
      * @returns {LinkedList}
      */
     concat(other) {
-        // TODO: implement
+        if (this.#headNode === null) {
+            this.#headNode = other.#headNode;
+        }
+        else {
+        this.tail.nextNode = other.#headNode;
+        }
+        return this;
     }
 
     /**
@@ -206,5 +212,21 @@ export class LinkedList {
             i++;
         }
         return (i === index) ? temp : null;
+    }
+    /**
+     * Returns the last node.
+     * @returns {Node}
+     */
+    #lastNode() {
+        if (this.#headNode === null) {
+            return null;
+        }
+        else {
+            let node = this.#headNode;
+            while (node.nextNode !== null) {
+                node = node.nextNode;
+            }
+            return node;
+        }
     }
 }
