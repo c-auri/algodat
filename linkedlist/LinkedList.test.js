@@ -13,7 +13,7 @@ describe('A new list constructed', () => {
         })
     })
     describe('with provided values', () => {
-        test.skip('has size equal to the number of provided values', () => {
+        test('has size equal to the number of provided values', () => {
             const list = new LinkedList('head', 'middle', 'tail')
             expect(list.size).toBe(3)
         })

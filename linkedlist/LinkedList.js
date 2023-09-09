@@ -59,12 +59,14 @@ export class LinkedList {
             return 0;
         }
         else {
-            let length = 0;
-            while (this.#headNode.next !== null) {
+            let length = 1;
+            let temp = this.#headNode;
+            while (temp.nextNode !== null) {
                 length++;
+                temp = temp.nextNode;
             }
+            return length;
         }
-        return length;
     }
 
     /**
@@ -76,7 +78,7 @@ export class LinkedList {
             this.#headNode = new Node(value);
         }
         else {
-            let temp = this.#headNode.next;
+            let temp = this.#headNode;
             while (temp.nextNode !== null) {
                 temp = temp.nextNode;
             }
