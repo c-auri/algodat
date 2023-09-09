@@ -75,8 +75,10 @@ export class LinkedList {
     }
 
     /**
-     * Concatenates the list with another list.
+     * Returns the concatenation of this list with another list. 
+     * Does not change the initial lists.
      * @param {LinkedList} other
+     * @returns {LinkedList}
      */
     concat(other) {
         // TODO: implement
