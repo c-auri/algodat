@@ -68,12 +68,12 @@ describe('Appending a value', () => {
 
 describe('Prepending a value', () => {
     describe('to a non-empty list', () => {
-        test.skip('sets that value to the head', () => {
+        test('sets that value to the head', () => {
             const list = new LinkedList('head', 'tail')
             list.prepend('new head')
             expect(list.head).toBe('new head')
         })
-        test.skip('sets the old head as the next node of the new head', () => {
+        test('sets the old head as the next node of the new head', () => {
             const list = new LinkedList('old head', 'tail')
             list.prepend('new head')
             expect(list.at(1)).toBe('old head')
@@ -81,24 +81,24 @@ describe('Prepending a value', () => {
         test.skip('increments the size', () => {
             const list = new LinkedList('head', 'tail')
             const previousSize = list.size
-            list.prepend('new head')
+            list('new head')
             expect(list.size).toBe(previousSize + 1)
         })
     })
     describe('to an empty list', () => {
-        test.skip('sets that value to the head', () => {
+        test('sets that value to the head', () => {
             const value = 'a new node'
             const list = new LinkedList()
             list.prepend(value)
             expect(list.head).toBe(value)
         })
-        test.skip('sets that value to the tail', () => {
+        test('sets that value to the tail', () => {
             const value = 'a new node'
             const list = new LinkedList()
             list.prepend(value)
             expect(list.tail).toBe(value)
         })
-        test.skip('results in size 1', () => {
+        test('results in size 1', () => {
             const list = new LinkedList()
             list.prepend('a new node')
             expect(list.size).toBe(1)

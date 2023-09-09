@@ -94,7 +94,9 @@ export class LinkedList {
         if (this.#headNode === null) {
             this.#headNode = new Node(value);
         }
+        else {
         this.#headNode = new Node(value, this.#headNode);
+        }
     }
 
     /**
