@@ -113,12 +113,12 @@ describe('Inserting at', () => {
             list.insertAt('new head', 0)
             expect(list.head).toBe('new head')
         })
-        test.skip('moves previous head to the successor of the prepended node', () => {
+        test('moves previous head to the successor of the prepended node', () => {
             const list = new LinkedList('head', 'tail')
             list.insertAt('new head', 0)
             expect(list.at(1)).toBe('head')
         })
-        test.skip('increments size', () => {
+        test('increments size', () => {
             const list = new LinkedList('head', 'tail')
             const previousSize = list.size
             list.insertAt('new head', 0)
@@ -131,7 +131,7 @@ describe('Inserting at', () => {
             list.insertAt('new tail', 1)
             expect(list.tail).toBe('new tail')
         })
-        test.skip('increments size', () => {
+        test('increments size', () => {
             const list = new LinkedList('head', 'tail')
             const previousSize = list.size
             list.insertAt('new tail', 1)
@@ -139,17 +139,17 @@ describe('Inserting at', () => {
         })
     })
     describe('a middle index', () => {
-        test.skip('sets value to given index', () => {
+        test('sets value to given index', () => {
             const list = new LinkedList('head', 'middle', 'tail')
             list.insertAt('insertion', 1)
             expect(list.at(1)).toBe('insertion')
         })
-        test.skip('appends previous node at that position to the inserted node', () => {
+        test('appends previous node at that position to the inserted node', () => {
             const list = new LinkedList('head', 'middle', 'tail')
             list.insertAt('insertion', 1)
             expect(list.at(2)).toBe('middle')
         })
-        test.skip('increments size', () => {
+        test('increments size', () => {
             const list = new LinkedList('head', 'middle', 'tail')
             const previousSize = list.size
             list.insertAt('insertion', 1)
