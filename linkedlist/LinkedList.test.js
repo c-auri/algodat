@@ -78,10 +78,10 @@ describe('Prepending a value', () => {
             list.prepend('new head')
             expect(list.at(1)).toBe('old head')
         })
-        test.skip('increments the size', () => {
+        test('increments the size', () => {
             const list = new LinkedList('head', 'tail')
             const previousSize = list.size
-            list('new head')
+            list.prepend('new head')
             expect(list.size).toBe(previousSize + 1)
         })
     })
