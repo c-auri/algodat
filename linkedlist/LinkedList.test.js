@@ -108,7 +108,7 @@ describe('Prepending a value', () => {
 
 describe('Inserting at', () => {
     describe('index 0', () => {
-        test.skip('sets given value to head', () => {
+        test('sets given value to head', () => {
             const list = new LinkedList('head', 'tail')
             list.insertAt('new head', 0)
             expect(list.head).toBe('new head')
