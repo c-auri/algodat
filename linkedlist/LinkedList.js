@@ -40,8 +40,7 @@ export class LinkedList {
     get tail() {
         if (this.#headNode === null) {
             return null;
-        }
-        else {
+        } else {
             let temp = this.#headNode;
             while (temp.nextNode !== null) {
                 temp = temp.nextNode;
@@ -57,8 +56,7 @@ export class LinkedList {
     get size() {
         if (this.#headNode === null) {
             return 0;
-        }
-        else {
+        } else {
             let length = 1;
             let temp = this.#headNode;
             while (temp.nextNode !== null) {
@@ -76,8 +74,7 @@ export class LinkedList {
     append(value) {
         if (this.#headNode === null) {
             this.#headNode = new Node(value);
-        }
-        else {
+        } else {
             let temp = this.#headNode;
             while (temp.nextNode !== null) {
                 temp = temp.nextNode;
@@ -93,8 +90,7 @@ export class LinkedList {
     prepend(value) {
         if (this.#headNode === null) {
             this.#headNode = new Node(value);
-        }
-        else {
+        } else {
         this.#headNode = new Node(value, this.#headNode);
         }
     }
@@ -110,8 +106,7 @@ export class LinkedList {
         }
         if (index === 0) {
             this.prepend(value);
-        }
-        else {
+        } else {
         let nodeBefore = this.#nodeAt(index - 1);
         let nodeAfter = this.#nodeAt(index);
         nodeBefore.nextNode = new Node(value, nodeAfter);
@@ -127,8 +122,7 @@ export class LinkedList {
     concat(other) {
         if (this.#headNode === null) {
             this.#headNode = other.#headNode;
-        }
-        else {
+        } else {
         this.#lastNode.nextNode = other.#headNode;
         }
         return this;
@@ -172,8 +166,7 @@ export class LinkedList {
         let temp = this.#headNode.value;
         if (this.#headNode.nextNode === null) {
             this.#headNode = null;
-        }
-        else {
+        } else {
         this.#headNode = this.#headNode.nextNode;
         }
         return temp;
@@ -253,8 +246,7 @@ export class LinkedList {
     #lastNode() {
         if (this.#headNode === null) {
             return null;
-        }
-        else {
+        } else {
             let node = this.#headNode;
             while (node.nextNode !== null) {
                 node = node.nextNode;
