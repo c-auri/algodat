@@ -106,7 +106,7 @@ export class LinkedList {
      */
     insertAt(value, index) {
         if (index < 0 || index > this.size) {
-            throw("Index out of bounds");
+            throw new RangeError("Index out of bounds.");
         }
         if (index === 0) {
             this.prepend(value);
@@ -140,8 +140,8 @@ export class LinkedList {
      * @returns {any | null}
      */
     at(index) {
-        if (index < 0 ) {
-            throw("Index can't be negative");
+        if (index < 0 || index > this.size) {
+            throw new RangeError("Index out of bounds.");
         }
         let node = this.#nodeAt(index);
         return (node === null) ? null : node.value; 
@@ -153,7 +153,7 @@ export class LinkedList {
      */
     pop() {
         if (this.#headNode === null) {
-            throw("List is empty");
+            throw new Error("List is empty.");
         }
         let nodeBeforeLast = this.#nodeAt(this.size-2);
         let temp = nodeBeforeLast.nextNode.value;
@@ -167,7 +167,7 @@ export class LinkedList {
      */
     shift() {
         if (this.#headNode === null) {
-            throw("List is empty");
+            throw new Error("List is empty.");
         }
         let temp = this.#headNode.value;
         if (this.#headNode.nextNode === null) {
@@ -185,16 +185,11 @@ export class LinkedList {
      * @returns {any} the removed value.
      */
     removeAt(index) {
-        if (index < 0 ) {
-            throw("Index can't be negative");
+        if (index < 0 || index > this.size) {
+            throw new RangeError("Index out of bounds.");
         }
-        try {
-            let before = this.#nodeAt(index-1);
-            let after = before.nextNode.nextNode;
-        }
-        catch(err) {
-            throw("Index out of range.");
-        }
+        let before = this.#nodeAt(index-1);
+        let after = before.nextNode.nextNode;
         let temp = before.nextNode.value;
         before.nextNode = after;
         return temp; 
@@ -241,15 +236,15 @@ export class LinkedList {
      */
     #nodeAt(index) {
         if (index < 0 ) {
-            throw("Index can't be negative");
+            throw new RangeError("Index must not be negative.");
         }
         let i = 0;
         let temp = this.#headNode;
-        while (i<index && temp !== null) {
+        while (i<index) {
             temp = temp.nextNode;
             i++;
         }
-        return (i === index) ? temp : null;
+        return temp;
     }
     /**
      * Returns the last node.

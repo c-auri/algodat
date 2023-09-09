@@ -110,13 +110,13 @@ describe('Inserting at', () => {
     describe('negative index', () => {
         test('throws error', () => {
             const list = new LinkedList('head', 'tail')
-            expect(() => list.insertAt('invalid', -1)).toThrow() 
+            expect(() => list.insertAt('invalid', -1)).toThrow(RangeError) 
         })
     })
     describe('too large index', () => {
         test('throws error', () => {
             const list = new LinkedList('head', 'tail')
-            expect(() => list.insertAt('invalid', 3)).toThrow() 
+            expect(() => list.insertAt('invalid', 3)).toThrow(RangeError) 
         })
     })
     describe('index 0', () => {
@@ -221,7 +221,10 @@ describe('Concat', () => {
 
 describe('Accessing a node at', () => {
     test('a negative index causes an error', () => {
-        expect(() => new LinkedList().at(-1)).toThrow()
+        expect(() => new LinkedList().at(-1)).toThrow(RangeError)
+    })
+    test('too large an index causes an error', () => {
+        expect(() => new LinkedList().at(1)).toThrow(RangeError)
     })
     test('index 0 returns the head', () => {
         const list = new LinkedList('head', 'tail')
@@ -234,10 +237,6 @@ describe('Accessing a node at', () => {
     test('the last index returns the tail', () => {
         const list = new LinkedList('head', 'middle', 'tail')
         expect(list.at(2)).toBe('tail')
-    })
-    test('an index larger than the size of the list returns null', () => {
-        const list = new LinkedList('head', 'tail')
-        expect(list.at(3)).toBe(null)
     })
 })
 
@@ -255,7 +254,7 @@ describe('Pop', () => {
     })
     describe('from an empty list', () => {
         test('causes an error', () => {
-            expect(() => new LinkedList().pop()).toThrow()
+            expect(() => new LinkedList().pop()).toThrow(Error)
         })
     })
 })
@@ -274,7 +273,7 @@ describe('Shift', () => {
     })
     describe('from an empty list', () => {
         test('causes an error', () => {
-            expect(() => new LinkedList().shift()).toThrow()
+            expect(() => new LinkedList().shift()).toThrow(Error)
         })
     })
 })
@@ -282,14 +281,14 @@ describe('Shift', () => {
 describe('RemoveAt', () => {
     describe('causes error', () => {
         test('for a negative index', () => {
-            expect(() => new LinkedList().removeAt(-1)).toThrow()
+            expect(() => new LinkedList().removeAt(-1)).toThrow(RangeError)
         })
         test('for a too large index', () => {
             const list = new LinkedList('node')
             expect(() => list.removeAt(1)).toThrow()
         })
         test('when trying to remove from an empty list', () => {
-            expect(() => new LinkedList().removeAt(0)).toThrow()
+            expect(() => new LinkedList().removeAt(0)).toThrow(Error)
         })
     })
     describe('at index 0', () => {
