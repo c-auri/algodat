@@ -46,7 +46,16 @@ export class LinkedList {
      * @returns {number}
      */
     get size() {
-        // TODO: implement
+        if (this.#headNode === null) {
+            return 0;
+        }
+        else {
+            let length = 0;
+            while (this.#headNode.next !== null) {
+                length++;
+            }
+        }
+        return length;
     }
 
     /**
