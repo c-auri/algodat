@@ -281,14 +281,14 @@ describe('Shift', () => {
 
 describe('RemoveAt', () => {
     describe('causes error', () => {
-        test.skip('for a negative index', () => {
+        test('for a negative index', () => {
             expect(() => new LinkedList().removeAt(-1)).toThrow()
         })
-        test.skip('for a too large index', () => {
+        test('for a too large index', () => {
             const list = new LinkedList('node')
             expect(() => list.removeAt(1)).toThrow()
         })
-        test.skip('when trying to remove from an empty list', () => {
+        test('when trying to remove from an empty list', () => {
             expect(() => new LinkedList().removeAt(0)).toThrow()
         })
     })

@@ -188,7 +188,16 @@ export class LinkedList {
         if (index < 0 ) {
             throw("Index can't be negative");
         }
-        // TODO: implement
+        try {
+            let before = this.#nodeAt(index-1);
+            let after = before.nextNode.nextNode;
+        }
+        catch(err) {
+            throw("Index out of range.");
+        }
+        let temp = before.nextNode.value;
+        before.nextNode = after;
+        return temp; 
     }
 
     /**
