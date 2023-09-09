@@ -195,22 +195,22 @@ describe('Concat', () => {
 })
 
 describe('Accessing a node at', () => {
-    test.skip('a negative index causes an error', () => {
+    test('a negative index causes an error', () => {
         expect(() => new LinkedList().at(-1)).toThrow()
     })
-    test.skip('index 0 returns the head', () => {
+    test('index 0 returns the head', () => {
         const list = new LinkedList('head', 'tail')
         expect(list.at(0)).toBe('head')
     })
-    test.skip('a middle index returns the node at that position', () => {
+    test('a middle index returns the node at that position', () => {
         const list = new LinkedList('head', 'middle', 'tail')
         expect(list.at(1)).toBe('middle')
     })
-    test.skip('the last index returns the tail', () => {
+    test('the last index returns the tail', () => {
         const list = new LinkedList('head', 'middle', 'tail')
         expect(list.at(2)).toBe('tail')
     })
-    test.skip('an index larger than the size of the list returns null', () => {
+    test('an index larger than the size of the list returns null', () => {
         const list = new LinkedList('head', 'tail')
         expect(list.at(3)).toBe(null)
     })
