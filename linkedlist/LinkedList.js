@@ -46,7 +46,7 @@ export class LinkedList {
             while (temp.nextNode !== null) {
                 temp = temp.nextNode;
             }
-            return temp;
+            return temp.value;
         }
     }
 
