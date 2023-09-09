@@ -243,18 +243,18 @@ describe('Accessing a node at', () => {
 
 describe('Pop', () => {
     describe('from a non-empty list', () => {
-        test.skip('returns the tail', () => {
+        test('returns the tail', () => {
             const list = new LinkedList('head', 'middle', 'tail')
             expect(list.pop()).toBe('tail')
         })
-        test.skip('removes the tail', () => {
+        test('removes the tail', () => {
             const list = new LinkedList('head', 'middle', 'tail')
             list.pop()
             expect(list.tail).toBe('middle')
         })
     })
     describe('from an empty list', () => {
-        test.skip('causes an error', () => {
+        test('causes an error', () => {
             expect(() => new LinkedList().pop()).toThrow()
         })
     })
