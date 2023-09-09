@@ -107,6 +107,18 @@ describe('Prepending a value', () => {
 })
 
 describe('Inserting at', () => {
+    describe('negative index', () => {
+        test('throws error', () => {
+            const list = new LinkedList('head', 'tail')
+            expect(() => list.insertAt('invalid', -1)).toThrow() 
+        })
+    })
+    describe('too large index', () => {
+        test('throws error', () => {
+            const list = new LinkedList('head', 'tail')
+            expect(() => list.insertAt('invalid', 3)).toThrow() 
+        })
+    })
     describe('index 0', () => {
         test('sets given value to head', () => {
             const list = new LinkedList('head', 'tail')
@@ -125,16 +137,29 @@ describe('Inserting at', () => {
             expect(list.size).toBe(previousSize + 1)
         })
     })
-    describe('last index', () => {
-        test.skip('sets given value to tail', () => {
+    describe('second to last index', () => {
+        test('sets given value to tail', () => {
             const list = new LinkedList('head', 'tail')
             list.insertAt('new tail', 1)
-            expect(list.tail).toBe('new tail')
+            expect(list.tail).toBe('tail')
         })
         test('increments size', () => {
             const list = new LinkedList('head', 'tail')
             const previousSize = list.size
             list.insertAt('new tail', 1)
+            expect(list.size).toBe(previousSize + 1)
+        })
+    })
+    describe('last index', () => {
+        test('sets given value to tail', () => {
+            const list = new LinkedList('head', 'tail')
+            list.insertAt('new tail', 2)
+            expect(list.tail).toBe('new tail')
+        })
+        test('increments size', () => {
+            const list = new LinkedList('head', 'tail')
+            const previousSize = list.size
+            list.insertAt('new tail', 2)
             expect(list.size).toBe(previousSize + 1)
         })
     })

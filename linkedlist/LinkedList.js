@@ -105,8 +105,8 @@ export class LinkedList {
      * @param {number} index 
      */
     insertAt(value, index) {
-        if (index < 0 ) {
-            throw("Index can't be negative");
+        if (index < 0 || index > this.size) {
+            throw("Index out of bounds");
         }
         if (index === 0) {
             this.prepend(value);
