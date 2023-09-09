@@ -8,7 +8,7 @@ describe('A new list constructed', () => {
         test('has no head', () => {
             expect(new LinkedList().head).toBe(null)
         })
-        test.skip('has no tail', () => {
+        test('has no tail', () => {
             expect(new LinkedList().tail).toBe(null)
         })
     })
