@@ -105,7 +105,14 @@ export class LinkedList {
      * @param {number} index 
      */
     insertAt(value, index) {
-        // TODO: implement
+        if (index === 0) {
+            this.prepend(value);
+        }
+        else {
+        let nodeBefore = this.#nodeAt(index - 1);
+        let nodeAfter = this.#nodeAt(index);
+        nodeBefore.nextNode = new Node(value, nodeAfter);
+        }
     }
 
     /**
