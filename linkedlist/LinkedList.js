@@ -152,7 +152,13 @@ export class LinkedList {
      * @returns {any} the removed value.
      */
     pop() {
-        // TODO: implement
+        if (this.#headNode === null) {
+            throw("List is empty");
+        }
+        let nodeBeforeLast = this.#nodeAt(this.size-2);
+        let temp = nodeBeforeLast.nextNode.value;
+        nodeBeforeLast.nextNode = null;
+        return temp;
     }
 
     /**
