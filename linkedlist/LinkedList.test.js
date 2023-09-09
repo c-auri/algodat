@@ -160,19 +160,19 @@ describe('Inserting at', () => {
 
 describe('Concat', () => {
     describe('returns the concatenation of the two lists', () => {
-        test.skip('when both lists are empty', ()=> {
+        test('when both lists are empty', ()=> {
             const list1 = new LinkedList()
             const list2 = new LinkedList()
             const result = list1.concat(list2)
             expect(result.size).toBe(0)
         })
-        test.skip('when first list is empty', () => {
+        test('when first list is empty', () => {
             const list1 = new LinkedList()
             const list2 = new LinkedList('head', 'tail')
             const result = list1.concat(list2)
             expect(result).toEqual(new LinkedList('head', 'tail'))
         })
-        test.skip('when second list is empty', () => {
+        test('when second list is empty', () => {
             const list1 = new LinkedList('head', 'tail')
             const list2 = new LinkedList()
             const result = list1.concat(list2)
