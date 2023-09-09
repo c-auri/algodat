@@ -28,7 +28,7 @@ describe('A new list constructed', () => {
 
 describe('Appending a value', () => {
     describe('to a non-empty list', () => {
-        test.skip('adds that value to the tail', () => {
+        test('adds that value to the tail', () => {
             const value = 'new tail'
             const list = new LinkedList()
             list.append('head')
