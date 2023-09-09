@@ -28,7 +28,7 @@ export class LinkedList {
      * @returns {any | null}
      */
     get head() {
-        return (this.#headNode === null) ? null : this.#headNode.value;
+        return this.#headNode?.value ?? null;
     }
 
     /**
