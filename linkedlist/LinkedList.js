@@ -38,14 +38,14 @@ export class LinkedList {
     get tail() {
         if (this.#headNode === null) {
             return null;
-        } else {
+        }
+
             let temp = this.#headNode;
             while (temp.nextNode !== null) {
                 temp = temp.nextNode;
             }
             return temp.value;
         }
-    }
 
     /**
      * Returns the number of values in the list.
@@ -54,7 +54,8 @@ export class LinkedList {
     get size() {
         if (this.#headNode === null) {
             return 0;
-        } else {
+        }
+
             let length = 1;
             let temp = this.#headNode;
             while (temp.nextNode !== null) {
@@ -63,7 +64,6 @@ export class LinkedList {
             }
             return length;
         }
-    }
 
     /**
      * Adds the given value to the end of the list.
@@ -102,6 +102,7 @@ export class LinkedList {
         if (index < 0 || index > this.size) {
             throw new RangeError("Index out of bounds.");
         }
+
         if (index === 0) {
             this.prepend(value);
         } else {
@@ -135,6 +136,7 @@ export class LinkedList {
         if (index < 0 || index > this.size) {
             throw new RangeError("Index out of bounds.");
         }
+
         let node = this.#nodeAt(index);
         return (node === null) ? null : node.value; 
         }
@@ -147,6 +149,7 @@ export class LinkedList {
         if (this.#headNode === null) {
             throw new Error("List is empty.");
         }
+
         let nodeBeforeLast = this.#nodeAt(this.size-2);
         let temp = nodeBeforeLast.nextNode.value;
         nodeBeforeLast.nextNode = null;
@@ -161,6 +164,7 @@ export class LinkedList {
         if (this.#headNode === null) {
             throw new Error("List is empty.");
         }
+
         let temp = this.#headNode.value;
         if (this.#headNode.nextNode === null) {
             this.#headNode = null;
@@ -179,6 +183,7 @@ export class LinkedList {
         if (index < 0 || index > this.size) {
             throw new RangeError("Index out of bounds.");
         }
+
         let before = this.#nodeAt(index-1);
         let after = before.nextNode.nextNode;
         let temp = before.nextNode.value;
@@ -229,6 +234,7 @@ export class LinkedList {
         if (index < 0 ) {
             throw new RangeError("Index must not be negative.");
         }
+
         let i = 0;
         let temp = this.#headNode;
         while (i<index) {
@@ -244,7 +250,8 @@ export class LinkedList {
     #lastNode() {
         if (this.#headNode === null) {
             return null;
-        } else {
+        }
+
             let node = this.#headNode;
             while (node.nextNode !== null) {
                 node = node.nextNode;
@@ -252,4 +259,3 @@ export class LinkedList {
             return node;
         }
     }
-}
