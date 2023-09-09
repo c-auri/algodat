@@ -166,7 +166,17 @@ export class LinkedList {
      * @returns {any} the removed value.
      */
     shift() {
-        // TODO: implement
+        if (this.#headNode === null) {
+            throw("List is empty");
+        }
+        let temp = this.#headNode.value;
+        if (this.#headNode.nextNode === null) {
+            this.#headNode = null;
+        }
+        else {
+        this.#headNode = this.#headNode.nextNode;
+        }
+        return temp;
     }
 
     /**
