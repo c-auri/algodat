@@ -15,8 +15,6 @@ import { Node } from './Node'
 export class LinkedList { 
     #headNode
     
-    // Uses rest parameter syntax (...) to allow for an indefinite number of parameters:
-    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters
     constructor(...values) {
         this.#headNode = null;
 
