@@ -30,7 +30,7 @@ export class LinkedList {
      * @returns {any | null}
      */
     get head() {
-        // TODO: implement
+        return this.#headNode;
     }
 
     /**
