@@ -2,10 +2,10 @@ import { LinkedList } from "./LinkedList.js";
 
 describe('A new list constructed', () => {
     describe('without provided values', () => {
-        test.skip('has size 0', () => {
+        test('has size 0', () => {
             expect(new LinkedList().size).toBe(0)
         })
-        test.skip('has no head', () => {
+        test('has no head', () => {
             expect(new LinkedList().head).toBe(null)
         })
         test.skip('has no tail', () => {
