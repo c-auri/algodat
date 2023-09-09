@@ -105,6 +105,9 @@ export class LinkedList {
      * @param {number} index 
      */
     insertAt(value, index) {
+        if (index < 0 ) {
+            throw("Index can't be negative");
+        }
         if (index === 0) {
             this.prepend(value);
         }
@@ -137,6 +140,9 @@ export class LinkedList {
      * @returns {any | null}
      */
     at(index) {
+        if (index < 0 ) {
+            throw("Index can't be negative");
+        }
         return this.#nodeAt(index).value;
     }
 
@@ -162,6 +168,9 @@ export class LinkedList {
      * @returns {any} the removed value.
      */
     removeAt(index) {
+        if (index < 0 ) {
+            throw("Index can't be negative");
+        }
         // TODO: implement
     }
 
@@ -205,6 +214,9 @@ export class LinkedList {
      * @returns {Node}
      */
     #nodeAt(index) {
+        if (index < 0 ) {
+            throw("Index can't be negative");
+        }
         let i = 0;
         let temp = this.#headNode;
         while (i<index && temp !== null) {

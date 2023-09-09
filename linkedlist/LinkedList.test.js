@@ -178,14 +178,14 @@ describe('Concat', () => {
             const result = list1.concat(list2)
             expect(result).toEqual(new LinkedList('head', 'tail'))
         })
-        test.skip('for two non-empty lists', () => {
+        test('for two non-empty lists', () => {
             const list1 = new LinkedList('head1', 'tail1')
             const list2 = new LinkedList('head2', 'tail2')
             const result = list1.concat(list2)
             expect(result).toEqual(new LinkedList('head1', 'tail1', 'head2', 'tail2'))
         })
     })
-    test.skip('does not change the input lists', ()=> {
+    test('does not change the input lists', ()=> {
         const list1 = new LinkedList('head1', 'tail1')
         const list2 = new LinkedList('head2', 'tail2')
         list1.concat(list2)
