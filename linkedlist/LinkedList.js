@@ -110,6 +110,7 @@ export class LinkedList {
     /**
      * Removes the value at the given index.
      * @param {number} index
+     * @returns {any} the removed value.
      */
     removeAt(index) {
         // TODO: implement
