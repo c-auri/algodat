@@ -30,7 +30,7 @@ export class LinkedList {
      * @returns {any | null}
      */
     get head() {
-        return this.#headNode;
+        return (this.#headNode === null)? null : this.#headNode.value;
     }
 
     /**

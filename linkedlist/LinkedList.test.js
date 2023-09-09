@@ -36,7 +36,7 @@ describe('Appending a value', () => {
             list.append(value)
             expect(list.tail).toBe(value)
         })
-        test.skip('increments the size', () => {
+        test('increments the size', () => {
             const list = new LinkedList()
             list.append('head')
             list.append('tail')
@@ -46,7 +46,7 @@ describe('Appending a value', () => {
         })
     })
     describe('to an empty list', () => {
-        test.skip('adds that value to the head', () => {
+        test('adds that value to the head', () => {
             const value = 'a new node'
             const list = new LinkedList()
             list.append(value)
