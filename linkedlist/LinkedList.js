@@ -166,17 +166,18 @@ export class LinkedList {
         if (index < 0 || index > this.size) {
             throw new RangeError("Index out of bounds.");
         }
+
         if (this.#headNode === null) {
-            throw new Error("Must not remove from empty list.")
+            throw new Error("Must not remove from empty list.");
         }
-        let result = this.#headNode.value;
+        
         if (index === 0) {
-            this.#headNode = this.#headNode.nextNode;
-            return result;
+            return this.shift();
         }
+
         let nodeBefore = this.#nodeAt(index-1);
         let nodeAfter = nodeBefore.nextNode.nextNode;
-        result = nodeBefore.nextNode.value;
+        let result = nodeBefore.nextNode.value;
         nodeBefore.nextNode = nodeAfter;
         return result;
     }
