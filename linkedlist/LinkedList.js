@@ -98,7 +98,7 @@ export class LinkedList {
         if (this.#headNode === null) {
             this.#headNode = other.#headNode;
         } else {
-            this.#lastNode.nextNode = other.#headNode;
+            this.#nodeAt(this.size - 1).nextNode = other.#headNode;
         }
         return this;
     }
@@ -257,20 +257,5 @@ export class LinkedList {
             i++;
         }
         return result;
-    }
-    /**
-     * Returns the last node.
-     * @returns {Node}
-     */
-    #lastNode() {
-        if (this.#headNode === null) {
-            return null;
-        }
-
-        let node = this.#headNode;
-        while (node.nextNode !== null) {
-            node = node.nextNode;
-        }
-        return node;
     }
 }
