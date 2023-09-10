@@ -214,16 +214,13 @@ export class LinkedList {
 
         let current = this.#headNode;
         let i = 0;
-        while (current.nextNode !== null) {
+        while (current !== null) {
             if (current.value === value) {
                 return i;
             }
             current = current.nextNode;
             i++;
         }
-        if (current.value === value) {
-            return i;
-        };
         return null;
     }
 
