@@ -15,6 +15,6 @@ For ease of development, the following VS Code plugins are recommended:
 - [Trailing Whitespace](https://marketplace.visualstudio.com/items?itemName=jkiviluoto.tws)
 
 ## Pre-commit hooks
-This project uses [Husky](https://typicode.github.io/husky/) to run the linter and the tests before every commit. They must pass for the commit to be applied, otherwise the commit will be aborted.
+This project uses [Husky](https://typicode.github.io/husky/) to run the linter and the tests before every commit. They must pass for the commit to be applied, otherwise the it will be aborted.
 
-The pre-commit hook can be (bypassed)[https://typicode.github.io/husky/guide.html#bypass-hooks] if necessary, but this should not be done to intentionally commit bad code.
+The pre-commit hook can be [bypassed](https://typicode.github.io/husky/guide.html#bypass-hooks) if necessary, but this should not be done to intentionally commit bad code.
