@@ -95,12 +95,7 @@ export class LinkedList {
      * @returns {LinkedList}
      */
     concat(other) {
-        if (this.#headNode === null) {
-            this.#headNode = other.#headNode;
-        } else {
-            this.#nodeAt(this.size - 1).nextNode = other.#headNode;
-        }
-        return this;
+        return new LinkedList(...(this.toArray().concat(other.toArray())));
     }
 
     /**
