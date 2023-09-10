@@ -1,7 +1,7 @@
 import { getMaxSubarray } from "./MaxSubarray";
 
 
-describe("maxSubArray", () => {
+describe("getMaxSubarray", () => {
     describe("returns the empty array", () => {
         test.skip("for the empty array", () => {
             expect(getMaxSubarray([])).toEqual([])
