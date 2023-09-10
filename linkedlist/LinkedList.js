@@ -27,12 +27,8 @@ export class LinkedList {
         if (this.#headNode === null) {
             return null;
         }
-
-        let current = this.#headNode;
-        while (current.nextNode !== null) {
-            current = current.nextNode;
-        }
-        return current.value;
+        
+        return this.#nodeAt(this.size - 1).value;
     }
 
     /**
@@ -61,11 +57,7 @@ export class LinkedList {
         if (this.#headNode === null) {
             this.#headNode = new Node(value);
         } else {
-            let current = this.#headNode;
-            while (current.nextNode !== null) {
-                current = current.nextNode;
-            }
-            current.nextNode = new Node(value);
+            this.#nodeAt(this.size - 1).nextNode = new Node(value); 
         }
     }
 
