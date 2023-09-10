@@ -377,11 +377,11 @@ describe('Contains', () => {
         })
     })
     describe('returns false', () => {
-        test.skip('if the passed value is not in the list', () => {
+        test('if the passed value is not in the list', () => {
             const list = new LinkedList('head', 'tail')
             expect(list.contains('middle')).toBe(false)
         })
-        test.skip('for an empty list', () => {
+        test('for an empty list', () => {
             const list = new LinkedList()
             expect(list.contains('middle')).toBe(false)
         })
@@ -389,26 +389,26 @@ describe('Contains', () => {
 })
 
 describe('Find', () => {
-    test.skip('returns null if the passed value is not in the list', () => {
+    test('returns null if the passed value is not in the list', () => {
         const list = new LinkedList('head', 'tail')
         expect(list.find('middle')).toBe(null)
     })
-    test.skip('returns 0 if the head contains the value', () => {
+    test('returns 0 if the head contains the value', () => {
         const list = new LinkedList('head', 'middle', 'tail')
         expect(list.find('head')).toBe(0)
     })
-    test.skip('returns the correct index if a middle node contains the value', () => {
+    test('returns the correct index if a middle node contains the value', () => {
         const list = new LinkedList('head', 'middle', 'tail')
         expect(list.find('middle')).toBe(1)
     })
-    test.skip('returns the last index if the tail contains the value', () => {
+    test('returns the last index if the tail contains the value', () => {
         const list = new LinkedList('head', 'middle', 'tail')
         expect(list.find('tail')).toBe(2)
     })
 })
 
 describe('ToString', () => {
-    test.skip('contains all node values', () => {
+    test('contains all node values', () => {
         const list = new LinkedList('head', 'middle', 'tail')
         expect(list.toString()).toContain('head')
         expect(list.toString()).toContain('middle')
@@ -421,7 +421,7 @@ describe('ToString', () => {
 })
 
 describe('ToArray', () => {
-    test.skip('contains all node values and nothing else', () => {
+    test('contains all node values and nothing else', () => {
         const list = new LinkedList('head', 'middle', 'tail')
         expect(list.toArray()).toEqual(['head', 'middle', 'tail'])
     })

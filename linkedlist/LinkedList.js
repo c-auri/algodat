@@ -208,9 +208,6 @@ export class LinkedList {
             return false;
         }
 
-        if (this.#headNode.value === value) {
-            return true;
-        }
         let temp = this.#headNode;
         while (temp.nextNode !== null) {
             if (temp.value === value) {
@@ -218,7 +215,7 @@ export class LinkedList {
             }
             temp = temp.nextNode;
         }
-        return false;
+        return (temp.value === value);
     }
 
     /**
@@ -227,7 +224,23 @@ export class LinkedList {
      * @returns {any | null}
      */
     find(value) {
-        // TODO: implement
+        if (this.#headNode === null) {
+            return null;
+        }
+
+        let temp = this.#headNode;
+        let i = 0;
+        while (temp.nextNode !== null) {
+            if (temp.value === value) {
+                return i;
+            }
+            temp = temp.nextNode;
+            i++;
+        }
+        if (temp.value === value) {
+            return i;
+        };
+        return null;
     }
 
     /**
@@ -235,7 +248,17 @@ export class LinkedList {
      * @returns {string}
      */
     toString() {
-        // TODO: implement
+        if (this.#headNode === null) {
+            return [];
+        }
+        let array = [];
+        let temp = this.#headNode;
+        while (temp.nextNode !== null) {
+            array.push(temp.value.toString());
+            temp = temp.nextNode;
+        }
+        array.push(temp.value.toString());
+        return array;
     }
 
     /**
@@ -243,7 +266,17 @@ export class LinkedList {
      * @returns {any[]}
      */
     toArray() {
-        // TODO: implement
+        if (this.#headNode === null) {
+            return [];
+        }
+        let array = [];
+        let temp = this.#headNode;
+        while (temp.nextNode !== null) {
+            array.push(temp.value);
+            temp = temp.nextNode;
+        }
+        array.push(temp.value);
+        return array;
     }
 
     /**
