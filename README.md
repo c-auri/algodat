@@ -9,7 +9,9 @@ To start working on the project do the following:
 1. If everything went well, you should be able to use `npm test` to run the tests once and `npm run watch` to keep the test suite running as you write new code.
 
 ## Pre-commit hooks
-This project uses [Husky](https://typicode.github.io/husky/) to run a hook runs the linter and the tests whenever a commit is initializes. This script must pass (exit code 0) for the commit to be applied, otherwise Husky will abort the commit. The pre-commit hook can be (bypassed)[https://typicode.github.io/husky/guide.html#bypass-hooks] if necessary, but this should not be done to intentionally commit faulty code.
+This project uses [Husky](https://typicode.github.io/husky/) to run the linter and the tests before every commit. They must pass for the commit to be applied, otherwise the commit will be aborted.
+
+The pre-commit hook can be (bypassed)[https://typicode.github.io/husky/guide.html#bypass-hooks] if necessary, but this should not be done to intentionally commit bad code.
 
 ## Recommended plugins
 For ease of development, the following VS Code plugins are recommended:
