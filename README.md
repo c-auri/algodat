@@ -10,3 +10,9 @@ To start working on the project do the following:
 
 ## Pre-commit hooks
 This project uses [Husky](https://typicode.github.io/husky/) to run a hook runs the linter and the tests whenever a commit is initializes. This script must pass (exit code 0) for the commit to be applied, otherwise Husky will abort the commit. The pre-commit hook can be (bypassed)[https://typicode.github.io/husky/guide.html#bypass-hooks] if necessary, but this should not be done to intentionally commit faulty code.
+
+## Recommended plugins
+For ease of development, the following VS Code plugins are recommended:
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [Jest Runner](https://marketplace.visualstudio.com/items?itemName=firsttris.vscode-jest-runner)
+- [Trailing Whitespace](https://marketplace.visualstudio.com/items?itemName=jkiviluoto.tws)
