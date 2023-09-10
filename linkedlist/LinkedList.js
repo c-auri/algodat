@@ -1,17 +1,5 @@
 import { Node } from './Node'
 
-// TODO:
-// Implement all the methods given in this class so that all the tests pass.
-// You can add private helper methods if you wish,
-// but the public interface of the class should not be altered.
-// Hint: a private #nodeAt() helper method will probably be useful (see bottom of this file).
-
-// The tests use strings as input values.
-// You don't need to add any type checks, just assume everything will be a string.
-
-// You should use null as the designated value for an intended missing node or value,
-// for example: the tail of an empty list should be null (and not undefined).
-
 export class LinkedList { 
     #headNode
     
