@@ -1,4 +1,4 @@
-import { getMaxSubarray } from "./MaxSubArray";
+import { getMaxSubarray } from "./MaxSubarray";
 
 
 describe("maxSubArray", () => {
