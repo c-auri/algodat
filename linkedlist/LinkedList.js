@@ -225,17 +225,13 @@ export class LinkedList {
      * @returns {string}
      */
     toString() {
-        if (this.#headNode === null) {
-            return [];
-        }
-        let array = [];
+        let result = [];
         let current = this.#headNode;
-        while (current.nextNode !== null) {
-            array.push(current.value.toString());
+        while(current !== null) {
+            result.push(current.value);
             current = current.nextNode;
         }
-        array.push(current.value.toString());
-        return array;
+        return result.join(" > ");
     }
 
     /**
