@@ -40,12 +40,12 @@ export class LinkedList {
             return null;
         }
 
-            let temp = this.#headNode;
-            while (temp.nextNode !== null) {
-                temp = temp.nextNode;
-            }
-            return temp.value;
+        let temp = this.#headNode;
+        while (temp.nextNode !== null) {
+            temp = temp.nextNode;
         }
+        return temp.value;
+    }
 
     /**
      * Returns the number of values in the list.
@@ -56,14 +56,14 @@ export class LinkedList {
             return 0;
         }
 
-            let length = 1;
-            let temp = this.#headNode;
-            while (temp.nextNode !== null) {
-                length++;
-                temp = temp.nextNode;
-            }
-            return length;
+        let length = 1;
+        let temp = this.#headNode;
+        while (temp.nextNode !== null) {
+            length++;
+            temp = temp.nextNode;
         }
+        return length;
+    }
 
     /**
      * Adds the given value to the end of the list.
@@ -89,7 +89,7 @@ export class LinkedList {
         if (this.#headNode === null) {
             this.#headNode = new Node(value);
         } else {
-        this.#headNode = new Node(value, this.#headNode);
+            this.#headNode = new Node(value, this.#headNode);
         }
     }
 
@@ -106,9 +106,9 @@ export class LinkedList {
         if (index === 0) {
             this.prepend(value);
         } else {
-        let nodeBefore = this.#nodeAt(index - 1);
-        let nodeAfter = this.#nodeAt(index);
-        nodeBefore.nextNode = new Node(value, nodeAfter);
+            let nodeBefore = this.#nodeAt(index - 1);
+            let nodeAfter = this.#nodeAt(index);
+            nodeBefore.nextNode = new Node(value, nodeAfter);
         }
     }
 
@@ -122,7 +122,7 @@ export class LinkedList {
         if (this.#headNode === null) {
             this.#headNode = other.#headNode;
         } else {
-        this.#lastNode.nextNode = other.#headNode;
+            this.#lastNode.nextNode = other.#headNode;
         }
         return this;
     }
@@ -139,7 +139,7 @@ export class LinkedList {
 
         let node = this.#nodeAt(index);
         return (node === null) ? null : node.value; 
-        }
+    }
 
     /**
      * Removes the last value in the list.
@@ -169,7 +169,7 @@ export class LinkedList {
         if (this.#headNode.nextNode === null) {
             this.#headNode = null;
         } else {
-        this.#headNode = this.#headNode.nextNode;
+            this.#headNode = this.#headNode.nextNode;
         }
         return temp;
     }
@@ -183,12 +183,19 @@ export class LinkedList {
         if (index < 0 || index > this.size) {
             throw new RangeError("Index out of bounds.");
         }
-
-        let before = this.#nodeAt(index-1);
-        let after = before.nextNode.nextNode;
-        let temp = before.nextNode.value;
-        before.nextNode = after;
-        return temp; 
+        if (this.#headNode === null) {
+            throw new Error("Must not remove from empty list.")
+        }
+        let temp = this.#headNode.value;
+        if (index === 0) {
+            this.#headNode = this.#headNode.nextNode;
+            return temp;
+        }
+        let nodeBefore = this.#nodeAt(index-1);
+        let nodeAfter = nodeBefore.nextNode.nextNode;
+        temp = nodeBefore.nextNode.value;
+        nodeBefore.nextNode = nodeAfter;
+        return temp;
     }
 
     /**
@@ -197,7 +204,21 @@ export class LinkedList {
      * @returns {boolean}
      */
     contains(value) {
-        // TODO: implement
+        if (this.#headNode === null) {
+            return false;
+        }
+
+        if (this.#headNode.value === value) {
+            return true;
+        }
+        let temp = this.#headNode;
+        while (temp.nextNode !== null) {
+            if (temp.value === value) {
+                return true;
+            }
+            temp = temp.nextNode;
+        }
+        return false;
     }
 
     /**
@@ -252,10 +273,10 @@ export class LinkedList {
             return null;
         }
 
-            let node = this.#headNode;
-            while (node.nextNode !== null) {
-                node = node.nextNode;
-            }
-            return node;
+        let node = this.#headNode;
+        while (node.nextNode !== null) {
+            node = node.nextNode;
         }
+        return node;
     }
+}

@@ -292,68 +292,68 @@ describe('RemoveAt', () => {
         })
     })
     describe('at index 0', () => {
-        test.skip('removes value from list', () => {
+        test('removes value from list', () => {
             const list = new LinkedList('head', 'middle', 'tail')
             list.removeAt(0)
             expect(list.contains('head')).toBe(false)
         })
-        test.skip('returns the removed value', () => {
+        test('returns the removed value', () => {
             const list = new LinkedList('head', 'middle', 'tail')
             const returnValue = list.removeAt(0)
             expect(returnValue).toBe('head')
         })
-        test.skip('decrements size', () => {
+        test('decrements size', () => {
             const list = new LinkedList('head', 'middle', 'tail')
             const previousSize = list.size
             list.removeAt(0)
             expect(list.size).toBe(previousSize - 1)
         })
-        test.skip('sets successor of previous head as new head', () => {
+        test('sets successor of previous head as new head', () => {
             const list = new LinkedList('head', 'middle', 'tail')
             list.removeAt(0)
             expect(list.head).toBe('middle')
         })
     })
     describe('at a middle index', () => {
-        test.skip('removes value from list', () => {
+        test('removes value from list', () => {
             const list = new LinkedList('head', 'middle', 'tail')
             list.removeAt(1)
             expect(list.contains('middle')).toBe(false)
         })
-        test.skip('returns the removed value', () => {
+        test('returns the removed value', () => {
             const list = new LinkedList('head', 'middle', 'tail')
             const returnValue = list.removeAt(1)
             expect(returnValue).toBe('middle')
         })
-        test.skip('decrements size', () => {
+        test('decrements size', () => {
             const list = new LinkedList('head', 'middle', 'tail')
             const previousSize = list.size
             list.removeAt(1)
             expect(list.size).toBe(previousSize - 1)
         })
-        test.skip('puts successor of removed node at given index', () => {
+        test('puts successor of removed node at given index', () => {
             const list = new LinkedList('head', 'middle', 'tail')
             list.removeAt(1)
             expect(list.at(1)).toBe('tail')
         })
     })
     describe('at last index', () => {
-        test.skip('removes value from list', () => {
+        test('removes value from list', () => {
             const list = new LinkedList('head', 'middle', 'tail')
             list.removeAt(2)
             expect(list.contains('tail')).toBe(false)
         })
-        test.skip('returns the removed value', () => {
+        test('returns the removed value', () => {
             const list = new LinkedList('head', 'middle', 'tail')
             const returnValue = list.removeAt(2)
             expect(returnValue).toBe('tail')
         })
-        test.skip('decrements size', () => {
+        test('decrements size', () => {
             const list = new LinkedList('head', 'middle', 'tail')
             list.removeAt(list.size - 1)
             expect(list.tail).toBe('middle')
         })
-        test.skip('sets predecessor of previous tail as new tail', () => {
+        test('sets predecessor of previous tail as new tail', () => {
             const list = new LinkedList('head', 'middle', 'tail')
             list.removeAt(2)
             expect(list.tail).toBe('middle')
@@ -363,15 +363,15 @@ describe('RemoveAt', () => {
 
 describe('Contains', () => {
     describe('returns true', () => {
-        test.skip('if the passed value is at the head of the list', () => {
+        test('if the passed value is at the head of the list', () => {
             const list = new LinkedList('head', 'middle', 'tail')
             expect(list.contains('head')).toBe(true)
         })
-        test.skip('if the passed value is in the middle of the list', () => {
+        test('if the passed value is in the middle of the list', () => {
             const list = new LinkedList('head', 'middle', 'tail')
             expect(list.contains('middle')).toBe(true)
         })
-        test.skip('if the passed value is at the tail of list', () => {
+        test('if the passed value is at the tail of list', () => {
             const list = new LinkedList('head', 'middle', 'tail')
             expect(list.contains('tail')).toBe(true)
         })
