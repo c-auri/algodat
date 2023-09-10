@@ -28,11 +28,11 @@ export class LinkedList {
             return null;
         }
 
-        let temp = this.#headNode;
-        while (temp.nextNode !== null) {
-            temp = temp.nextNode;
+        let current = this.#headNode;
+        while (current.nextNode !== null) {
+            current = current.nextNode;
         }
-        return temp.value;
+        return current.value;
     }
 
     /**
@@ -45,10 +45,10 @@ export class LinkedList {
         }
 
         let length = 1;
-        let temp = this.#headNode;
-        while (temp.nextNode !== null) {
+        let current = this.#headNode;
+        while (current.nextNode !== null) {
             length++;
-            temp = temp.nextNode;
+            current = current.nextNode;
         }
         return length;
     }
@@ -61,11 +61,11 @@ export class LinkedList {
         if (this.#headNode === null) {
             this.#headNode = new Node(value);
         } else {
-            let temp = this.#headNode;
-            while (temp.nextNode !== null) {
-                temp = temp.nextNode;
+            let current = this.#headNode;
+            while (current.nextNode !== null) {
+                current = current.nextNode;
             }
-            temp.nextNode = new Node(value);
+            current.nextNode = new Node(value);
         }
     }
 
@@ -139,9 +139,9 @@ export class LinkedList {
         }
 
         let nodeBeforeLast = this.#nodeAt(this.size-2);
-        let temp = nodeBeforeLast.nextNode.value;
+        let result = nodeBeforeLast.nextNode.value;
         nodeBeforeLast.nextNode = null;
-        return temp;
+        return result;
     }
 
     /**
@@ -153,13 +153,13 @@ export class LinkedList {
             throw new Error("List is empty.");
         }
 
-        let temp = this.#headNode.value;
+        let result = this.#headNode.value;
         if (this.#headNode.nextNode === null) {
             this.#headNode = null;
         } else {
             this.#headNode = this.#headNode.nextNode;
         }
-        return temp;
+        return result;
     }
 
     /**
@@ -174,16 +174,16 @@ export class LinkedList {
         if (this.#headNode === null) {
             throw new Error("Must not remove from empty list.")
         }
-        let temp = this.#headNode.value;
+        let result = this.#headNode.value;
         if (index === 0) {
             this.#headNode = this.#headNode.nextNode;
-            return temp;
+            return result;
         }
         let nodeBefore = this.#nodeAt(index-1);
         let nodeAfter = nodeBefore.nextNode.nextNode;
-        temp = nodeBefore.nextNode.value;
+        result = nodeBefore.nextNode.value;
         nodeBefore.nextNode = nodeAfter;
-        return temp;
+        return result;
     }
 
     /**
@@ -196,14 +196,14 @@ export class LinkedList {
             return false;
         }
 
-        let temp = this.#headNode;
-        while (temp.nextNode !== null) {
-            if (temp.value === value) {
+        let current = this.#headNode;
+        while (current.nextNode !== null) {
+            if (current.value === value) {
                 return true;
             }
-            temp = temp.nextNode;
+            current = current.nextNode;
         }
-        return (temp.value === value);
+        return (current.value === value);
     }
 
     /**
@@ -216,16 +216,16 @@ export class LinkedList {
             return null;
         }
 
-        let temp = this.#headNode;
+        let current = this.#headNode;
         let i = 0;
-        while (temp.nextNode !== null) {
-            if (temp.value === value) {
+        while (current.nextNode !== null) {
+            if (current.value === value) {
                 return i;
             }
-            temp = temp.nextNode;
+            current = current.nextNode;
             i++;
         }
-        if (temp.value === value) {
+        if (current.value === value) {
             return i;
         };
         return null;
@@ -240,12 +240,12 @@ export class LinkedList {
             return [];
         }
         let array = [];
-        let temp = this.#headNode;
-        while (temp.nextNode !== null) {
-            array.push(temp.value.toString());
-            temp = temp.nextNode;
+        let current = this.#headNode;
+        while (current.nextNode !== null) {
+            array.push(current.value.toString());
+            current = current.nextNode;
         }
-        array.push(temp.value.toString());
+        array.push(current.value.toString());
         return array;
     }
 
@@ -258,12 +258,12 @@ export class LinkedList {
             return [];
         }
         let array = [];
-        let temp = this.#headNode;
-        while (temp.nextNode !== null) {
-            array.push(temp.value);
-            temp = temp.nextNode;
+        let current = this.#headNode;
+        while (current.nextNode !== null) {
+            array.push(current.value);
+            current = current.nextNode;
         }
-        array.push(temp.value);
+        array.push(current.value);
         return array;
     }
 
@@ -278,12 +278,12 @@ export class LinkedList {
         }
 
         let i = 0;
-        let temp = this.#headNode;
+        let result = this.#headNode;
         while (i<index) {
-            temp = temp.nextNode;
+            result = result.nextNode;
             i++;
         }
-        return temp;
+        return result;
     }
     /**
      * Returns the last node.
