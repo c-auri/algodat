@@ -247,16 +247,12 @@ export class LinkedList {
      * @returns {any[]}
      */
     toArray() {
-        if (this.#headNode === null) {
-            return [];
-        }
         let array = [];
         let current = this.#headNode;
-        while (current.nextNode !== null) {
+        while (current !== null) {
             array.push(current.value);
             current = current.nextNode;
         }
-        array.push(current.value);
         return array;
     }
 
