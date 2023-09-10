@@ -26,7 +26,7 @@ describe("getMaxSubarray", () => {
         })
     })
     describe("returns the correct maximum subarray", () => {
-        test.skip("for  problem with a true subarray as solution", () => {
+        test.skip("for a problem with a non-trivial subarray as solution", () => {
             const array = [ -2, 1, -3, 4, -1, 2, 1, -5, 4 ]
             const solution = [ 4, -1, 2, 1 ]
             expect(getMaxSubarray(array)).toEqual(solution)
