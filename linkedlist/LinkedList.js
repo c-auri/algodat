@@ -1,8 +1,9 @@
-import { Node } from './Node'
+import { Node } from "./Node"
 
-export class LinkedList { 
+
+export class LinkedList {
     #headNode
-    
+
     constructor(...values) {
         this.#headNode = null;
 
@@ -27,7 +28,7 @@ export class LinkedList {
         if (this.#headNode === null) {
             return null;
         }
-        
+
         return this.#nodeAt(this.size - 1).value;
     }
 
@@ -51,19 +52,19 @@ export class LinkedList {
 
     /**
      * Adds the given value to the end of the list.
-     * @param {any} value 
+     * @param {any} value
      */
     append(value) {
         if (this.#headNode === null) {
             this.#headNode = new Node(value);
         } else {
-            this.#nodeAt(this.size - 1).nextNode = new Node(value); 
+            this.#nodeAt(this.size - 1).nextNode = new Node(value);
         }
     }
 
     /**
      * Adds the given value to the start of the list.
-     * @param {any} value 
+     * @param {any} value
      */
     prepend(value) {
         this.#headNode = new Node(value, this.#headNode);
@@ -71,8 +72,8 @@ export class LinkedList {
 
     /**
      * Adds the given value at the given position.
-     * @param {any} value 
-     * @param {number} index 
+     * @param {any} value
+     * @param {number} index
      */
     insertAt(value, index) {
         if (index < 0 || index > this.size) {
@@ -82,14 +83,14 @@ export class LinkedList {
         if (index === 0) {
             this.prepend(value);
         } else {
-            let nodeBefore = this.#nodeAt(index - 1);
-            let nodeAfter = this.#nodeAt(index);
+            const nodeBefore = this.#nodeAt(index - 1);
+            const nodeAfter = this.#nodeAt(index);
             nodeBefore.nextNode = new Node(value, nodeAfter);
         }
     }
 
     /**
-     * Returns the concatenation of this list with another list. 
+     * Returns the concatenation of this list with another list.
      * Does not change the initial lists.
      * @param {LinkedList} other
      * @returns {LinkedList}
@@ -100,7 +101,7 @@ export class LinkedList {
 
     /**
      * Returns the value at the given index position.
-     * @param {number} index 
+     * @param {number} index
      * @returns {any | null}
      */
     at(index) {
@@ -120,8 +121,8 @@ export class LinkedList {
             throw new Error("List is empty.");
         }
 
-        let nodeBeforeLast = this.#nodeAt(this.size-2);
-        let result = nodeBeforeLast.nextNode.value;
+        const nodeBeforeLast = this.#nodeAt(this.size - 2);
+        const result = nodeBeforeLast.nextNode.value;
         nodeBeforeLast.nextNode = null;
         return result;
     }
@@ -134,8 +135,8 @@ export class LinkedList {
         if (this.#headNode === null) {
             throw new Error("List is empty.");
         }
-    
-        let result = this.#headNode.value;
+
+        const result = this.#headNode.value;
         this.#headNode = this.#headNode.nextNode ?? null;
         return result;
     }
@@ -153,21 +154,21 @@ export class LinkedList {
         if (this.#headNode === null) {
             throw new Error("Must not remove from empty list.");
         }
-        
+
         if (index === 0) {
             return this.shift();
         }
 
-        let nodeBefore = this.#nodeAt(index-1);
-        let nodeAfter = nodeBefore.nextNode.nextNode;
-        let result = nodeBefore.nextNode.value;
+        const nodeBefore = this.#nodeAt(index - 1);
+        const nodeAfter = nodeBefore.nextNode.nextNode;
+        const result = nodeBefore.nextNode.value;
         nodeBefore.nextNode = nodeAfter;
         return result;
     }
 
     /**
      * Returns whether the list contains the given value.
-     * @param {any} value 
+     * @param {any} value
      * @returns {boolean}
      */
     contains(value) {
@@ -187,7 +188,7 @@ export class LinkedList {
 
     /**
      * Returns the index of the given value.
-     * @param {any} value 
+     * @param {any} value
      * @returns {any | null}
      */
     find(value) {
@@ -212,9 +213,9 @@ export class LinkedList {
      * @returns {string}
      */
     toString() {
-        let result = [];
+        const result = [];
         let current = this.#headNode;
-        while(current !== null) {
+        while (current !== null) {
             result.push(current.value);
             current = current.nextNode;
         }
@@ -226,7 +227,7 @@ export class LinkedList {
      * @returns {any[]}
      */
     toArray() {
-        let array = [];
+        const array = [];
         let current = this.#headNode;
         while (current !== null) {
             array.push(current.value);
@@ -237,17 +238,17 @@ export class LinkedList {
 
     /**
      * Returns the node at the given index position.
-     * @param {number} index 
+     * @param {number} index
      * @returns {Node}
      */
     #nodeAt(index) {
-        if (index < 0 ) {
+        if (index < 0) {
             throw new RangeError("Index must not be negative.");
         }
 
         let i = 0;
         let result = this.#headNode;
-        while (i<index) {
+        while (i < index) {
             result = result.nextNode;
             i++;
         }
