@@ -74,11 +74,7 @@ export class LinkedList {
      * @param {any} value 
      */
     prepend(value) {
-        if (this.#headNode === null) {
-            this.#headNode = new Node(value);
-        } else {
-            this.#headNode = new Node(value, this.#headNode);
-        }
+        this.#headNode = new Node(value, this.#headNode);
     }
 
     /**
