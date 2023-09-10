@@ -414,10 +414,6 @@ describe('ToString', () => {
         expect(list.toString()).toContain('middle')
         expect(list.toString()).toContain('tail')
     })
-    test.skip('ends with null', () => {
-        const list = new LinkedList('head', 'middle', 'tail')
-        expect(list.toString().slice(-4)).toBe('null')
-    })
 })
 
 describe('ToArray', () => {
