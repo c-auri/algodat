@@ -125,8 +125,7 @@ export class LinkedList {
             throw new RangeError("Index out of bounds.");
         }
 
-        let node = this.#nodeAt(index);
-        return (node === null) ? null : node.value; 
+        return this.#nodeAt(index)?.value ?? null;
     }
 
     /**
@@ -152,13 +151,9 @@ export class LinkedList {
         if (this.#headNode === null) {
             throw new Error("List is empty.");
         }
-
+    
         let result = this.#headNode.value;
-        if (this.#headNode.nextNode === null) {
-            this.#headNode = null;
-        } else {
-            this.#headNode = this.#headNode.nextNode;
-        }
+        this.#headNode = this.#headNode.nextNode ?? null;
         return result;
     }
 
