@@ -1,4 +1,4 @@
-import { sort } from "./sort.js"
+import { sort } from "./Mergesort.js"
 
 
 describe("sorts", () => {
