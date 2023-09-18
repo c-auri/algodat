@@ -13,7 +13,7 @@ describe("getMaxSubarray with empty solution not allowed", () => {
         })
     })
     describe("returns an array containing only the maximum value", () => {
-        test.skip("for an array with only negative elements", () => {
+        test("for an array with only negative elements", () => {
             expect(getMaxSubarray([ -1, -5, -7 ], false)).toEqual([ -1 ])
         })
     })
@@ -22,10 +22,10 @@ describe("getMaxSubarray with empty solution not allowed", () => {
 
 describe("getMaxSubarray with empty solution allowed", () => {
     describe("returns the empty array", () => {
-        test.skip("for the empty array", () => {
+        test("for the empty array", () => {
             expect(getMaxSubarray([])).toEqual([])
         })
-        test.skip("for an array with a single negative element", () => {
+        test("for an array with a single negative element", () => {
             expect(getMaxSubarray([ -1 ])).toEqual([])
         })
         test.skip("for an array with only negative elements", () => {
