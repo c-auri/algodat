@@ -32,5 +32,6 @@ export function getMaxSubarray(numbers, allowEmptySolution = true) {
             biggestArray = numbers.slice(i, j);
         }
     }
-    return biggestArray;
+
+    return allowEmptySolution ? (biggestSum > 0) ? biggestArray : [] : biggestArray;
 }
