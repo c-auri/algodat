@@ -18,7 +18,7 @@ export function getMaxSubarray(numbers, allowEmptySolution = true) {
     let biggestArray = [ numbers[0] ];
     let i = 0;
     let j = 0;
-    for (let k = 1; k++; k <= numbers.length - 1) {
+    for (let k = 1; k <= numbers.length - 1; k++) {
         if (currentSum + numbers[k] < numbers[k]) {
             currentSum = numbers[k];
             i = k;

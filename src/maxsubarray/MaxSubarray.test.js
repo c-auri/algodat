@@ -8,7 +8,7 @@ describe("getMaxSubarray with empty solution not allowed", () => {
         })
     })
     describe("returns the input array", () => {
-        test.skip("for an array with a single negative element", () => {
+        test("for an array with a single negative element", () => {
             expect(getMaxSubarray([ -1 ], false)).toEqual([ -1 ])
         })
     })
