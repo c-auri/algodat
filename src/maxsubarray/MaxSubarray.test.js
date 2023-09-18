@@ -28,7 +28,7 @@ describe("getMaxSubarray with empty solution allowed", () => {
         test("for an array with a single negative element", () => {
             expect(getMaxSubarray([ -1 ])).toEqual([])
         })
-        test.skip("for an array with only negative elements", () => {
+        test("for an array with only negative elements", () => {
             expect(getMaxSubarray([ -1, -5, -7 ])).toEqual([])
         })
     })
@@ -41,10 +41,10 @@ describe("getMaxSubarray with empty solution allowed", () => {
  */
 function sharedTests(allowEmptySolution) {
     describe("returns the input array", () => {
-        test.skip("for an array with a single positive element", () => {
+        test("for an array with a single positive element", () => {
             expect(getMaxSubarray([ 1 ], allowEmptySolution)).toEqual([ 1 ])
         })
-        test.skip("for an array with only positive elements", () => {
+        test("for an array with only positive elements", () => {
             expect(getMaxSubarray([ 1, 7, 5 ], allowEmptySolution)).toEqual([ 1, 7, 5 ])
         })
         test.skip("for an array with a single small negative number in the middle", () => {

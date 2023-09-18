@@ -29,7 +29,7 @@ export function getMaxSubarray(numbers, allowEmptySolution = true) {
         }
         if (biggestSum < currentSum) {
             biggestSum = currentSum;
-            biggestArray = numbers.slice(i, j);
+            biggestArray = numbers.slice(i, j + 1);
         }
     }
 
