@@ -13,23 +13,24 @@ export function getMaxSubarray(numbers, allowEmptySolution = true) {
     let currentSum = numbers[0];
     let biggestSum = numbers[0];
     let biggestArray = [ numbers[0] ];
-    let i = 0;
-    let j = 0;
+    let currentStart = 0;
+    let biggestStart = 0;
+    let biggestEnd = 0;
     for (let k = 1; k <= numbers.length - 1; k++) {
         if (currentSum + numbers[k] < numbers[k]) {
             currentSum = numbers[k];
-            i = k;
-            j = k;
+            currentStart = k;
         } else {
             currentSum = currentSum + numbers[k];
-            j++;
         }
 
         if (biggestSum < currentSum) {
             biggestSum = currentSum;
-            biggestArray = numbers.slice(i, j + 1);
+            biggestStart = currentStart;
+            biggestEnd = k;
         }
     }
+    biggestArray = numbers.slice(biggestStart, biggestEnd + 1);
 
     return (allowEmptySolution && biggestSum <= 0) ? [] : biggestArray;
 }
