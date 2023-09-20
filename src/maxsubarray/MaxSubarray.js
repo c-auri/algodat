@@ -31,5 +31,5 @@ export function getMaxSubarray(numbers, allowEmptySolution = true) {
         }
     }
 
-    return allowEmptySolution ? (biggestSum > 0) ? biggestArray : [] : biggestArray;
+    return (allowEmptySolution && biggestSum <= 0) ? [] : biggestArray;
 }
