@@ -6,13 +6,10 @@
  * @returns {number}
  */
 export function getMaxSubarray(numbers, allowEmptySolution = true) {
-    // TODO: implement a solution in linear time
-    // Hint: You will probably need the Array.slice function:
-    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
-
     if (!allowEmptySolution && numbers.length === 0) {
         throw new Error("Input array must not be empty.")
     }
+
     let currentSum = numbers[0];
     let biggestSum = numbers[0];
     let biggestArray = [ numbers[0] ];
@@ -27,6 +24,7 @@ export function getMaxSubarray(numbers, allowEmptySolution = true) {
             currentSum = currentSum + numbers[k];
             j++;
         }
+
         if (biggestSum < currentSum) {
             biggestSum = currentSum;
             biggestArray = numbers.slice(i, j + 1);
